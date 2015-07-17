@@ -17,6 +17,9 @@ var (
 		"get-sphinx":  cmdGetSphinx,
 		"update-cron": cmdUpdateCron,
 	}
+
+	//定义操作容器的名称
+	containerName = "lims2"
 )
 
 type Command struct {

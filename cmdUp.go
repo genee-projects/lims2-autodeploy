@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/docopt/docopt-go"
@@ -33,9 +32,5 @@ Options:
 
 	args, _ := docopt.Parse(usage, defaultArgs, true, "Lims2 Autodeploy 0.1", false)
 
-	fmt.Println(args)
-
-	fmt.Println("hehehe up ")
-	//do something here!
 	return 0
 }
