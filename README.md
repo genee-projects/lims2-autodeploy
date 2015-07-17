@@ -18,3 +18,16 @@ Options:
   -h --help     Show this screen.
   --version     Show version.
 ```
+
+## How To Build
+
+### Docker
+
+```
+$ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:latest go build -o lims2
+```
+
+### Local
+```
+$ go build -o lims2
+```
