@@ -25,7 +25,7 @@ Options:
 
 ```
 $ docker run \
-    --rm
+    --rm \
     -v "$PWD":/go/src/github.com/lims2-tools/autodeploy \
     -w /go/src/github.com/lims2-tools/autodeploy \
     golang:latest \
