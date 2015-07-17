@@ -24,7 +24,12 @@ Options:
 ### Docker
 
 ```
-$ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:latest go build -o lims2
+$ docker run \
+    --rm
+    -v "$PWD":/go/src/github.com/lims2-tools/autodeploy \
+    -w /go/src/github.com/lims2-tools/autodeploy \
+    golang:latest \
+    bash -c 'go get "github.com/docopt/docopt-go" && cd /go/src/github.com/lims2-tools/autodeploy && go build -o lims2'
 ```
 
 ### Local
