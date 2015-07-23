@@ -1,0 +1,47 @@
+---
+version: '2.13.2-t1.2'
+fqdn: 'less.nankai.edu.cn'
+services:
+  database:
+    host: '192.168.0.1'
+    password: '123456'
+  sphinxsearch:
+    host: '172.17.42.1'
+    port: '9306'
+  node-lims2:
+    host: '172.17.42.1'
+    port: '8041'
+    salt: 'salt'
+    rpc_token: 'rpc-token'
+  redis:
+    host: '172.17.42.1'
+    port: '6379'
+  genee_updater:
+    site_url: 'http://222.30.44.170:3000'
+    port: '3000'
+  glogon:
+    port: '2430'
+    host: null
+  cacs:
+    port: '2380'
+  icco:
+    port: '2330'
+  icco-agent:
+    port: '2332'
+    device_port: '4001'
+    service_port: '2330'
+  epc:
+    port: '3041'
+labs:
+  - siteId: 'cf'
+    labId: 'nankai'
+    clientName: '南开大学大型仪器管理平台'
+    modules:
+      achievements: true
+      eq_stat: true
+      gismon: true
+      announces: true
+      eq_door: true
+      entrance: true
+      cers: true
+    lims2_api: 'http://less.nankai.edu.cn/lims/api'

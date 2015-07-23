@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"os/exec"
 	"strings"
@@ -38,9 +39,13 @@ Usage: lims2 update-cron`
 		"bash -c 'php /usr/share/lims2/cli/get_all_cron.php -u=www-data /usr/share/lims2 > /etc/cron.d/lims2'",
 	}
 
-	c := exec.Command("docker", strings.Join(args, " "))
+	c, err := exec.Command("docker", strings.Join(args, " ")).Output()
 
-	c.Run()
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(string(c))
 
 	return 0
 }

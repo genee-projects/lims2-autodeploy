@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/docopt/docopt-go"
+	"github.com/gosexy/yaml"
 )
 
 var (
@@ -26,6 +27,7 @@ type Command struct {
 	command string
 	args    map[string]interface{}
 	Run     func(cmd *Command) int
+	info    *yaml.Yaml
 }
 
 func main() {
@@ -75,7 +77,7 @@ Commands:
 	}()
 
 	if _, err := os.Stat("main.yml"); err == nil {
-
+		subCommand.info, _ = yaml.Open("main.yml")
 	} else {
 		panic(errors.New("main.yml not exists."))
 	}

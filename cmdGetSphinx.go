@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"os/exec"
 	"strings"
@@ -40,9 +41,13 @@ Usage: lims2 get-sphinx`
 		"/usr/share/lims2",
 	}
 
-	c := exec.Command("docker", strings.Join(args, " "))
+	c, err := exec.Command("docker", strings.Join(args, " ")).Output()
 
-	c.Run()
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(string(c))
 
 	return 0
 }
