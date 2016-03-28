@@ -1,5 +1,8 @@
 # Lims2 Autodeploy.
 
+
+该项目为 EP 工作初期使用 Golang 开发的 Lims2 部署工具. 如无用, 可直接删除项目
+
 ## How To Use
 
 ```
